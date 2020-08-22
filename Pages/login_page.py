@@ -7,7 +7,7 @@ from .selectors import MainPage
 
 
 class LoginPage(BasePage):
-    username = (By.ID, 'email_field')
+    email = (By.ID, 'email_field')
     password = (By.ID, 'password_field')
     submit_button = (By.NAME, 'go')
 
@@ -17,8 +17,8 @@ class LoginPage(BasePage):
 
     def _set_username_(self, name):
         with allure.step("Enter name {}".format(name)):
-            self.find_element(locator=self.username).clear()
-            self.find_element(locator=self.username).send_keys(name)
+            self.find_element(locator=self.email).clear()
+            self.find_element(locator=self.email).send_keys(name)
 
     def _set_password_(self, password):
         with allure.step("Enter password {}".format(password)):
@@ -33,4 +33,4 @@ class LoginPage(BasePage):
 
     def logout(self):
         with allure.step("Click logout button"):
-            self.wait_for_element(AdminPage.LOGOUT).click()
+            self.wait_for_element(MainPage.LOGOUT).click()

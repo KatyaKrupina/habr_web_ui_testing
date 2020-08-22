@@ -12,6 +12,8 @@ from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriv
 # logger = logging.getLogger(__name__)
 # logging.basicConfig(level=logging.INFO, filename="Logs/test.log")
 from Pages.base import BasePage
+from Pages.login_page import LoginPage
+from Pages.profile_page import ProfilePage
 
 
 def pytest_addoption(parser):
@@ -37,52 +39,25 @@ def url(request):
     return request.config.getoption('--url')
 
 
-# @pytest.fixture()
-# def catalog_url():
-#     url = 'http://localhost/index.php?route=product/category&path=20'
-#     return url
+@pytest.fixture()
+def login_page(browser):
+    page = LoginPage(browser)
+    page.go_to()
+    return page
 
 
-# @pytest.fixture()
-# def product_url():
-#     url = 'http://localhost/index.php?route=product/product&path=57&product_id=49'
-#     return url
-#
-#
-# @pytest.fixture()
-# def login_url():
-#     url = 'http://localhost/index.php?route=account/login'
-#     return url
-#
-#
-# @pytest.fixture()
-# def admin_url():
-#     url = 'http://localhost/admin/'
-#     return url
-#
-#
-# @pytest.fixture()
-# def admin_page(browser):
-#     logger.info('Go to admin page')
-#     page = AdminLoginPage(browser)
-#     page.go_to()
-#     return page
-#
-#
 @pytest.fixture()
 def main_page(browser):
-    # logger.info('Go to main page')
     page = BasePage(browser)
     page.go_to()
     return page
-#
-#
-# @pytest.fixture()
-# def tablets_page(browser):
-#     logger.info('Go to tablets page')
-#     page = TabletsPage(browser)
-#     page.go_to()
-#     return page
+
+
+@pytest.fixture()
+def profile_page(browser):
+    page = ProfilePage(browser)
+    page.go_to()
+    return page
 
 
 @pytest.fixture()
@@ -91,7 +66,7 @@ def browser(browser_name):
     if browser_name == 'Chrome':
         caps = DesiredCapabilities.CHROME
         options = ChromeOptions()
-        options.add_argument('--headless')
+        # options.add_argument('--headless')
         options.add_argument('--ignore-certificate-errors')
         options.add_experimental_option('w3c', False)
         caps['loggingPrefs'] = {'performance': 'ALL', 'browser': 'ALL'}

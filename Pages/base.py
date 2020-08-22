@@ -1,6 +1,9 @@
 import logging
 
 import allure
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -89,3 +92,10 @@ class BasePage(object):
                               name="screenshot_image",
                               attachment_type=allure.attachment_type.PNG)
                 raise AssertionError(f"Can't get text in element {locator}")
+
+    def switch_to_current_tab(self):
+        with allure.step("Switching to current browser tab"):
+            self.driver.switch_to.window(self.driver.window_handles[len(self.driver.window_handles)-1])
+
+
+
