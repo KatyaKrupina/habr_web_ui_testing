@@ -6,6 +6,7 @@ from .base import BasePage
 from .selectors import MainPage
 
 
+@allure.feature('Login account')
 class LoginPage(BasePage):
     email = (By.ID, 'email_field')
     password = (By.ID, 'password_field')

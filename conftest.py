@@ -13,6 +13,7 @@ from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriv
 # logging.basicConfig(level=logging.INFO, filename="Logs/test.log")
 from Pages.base import BasePage
 from Pages.login_page import LoginPage
+from Pages.main_page import HabrMainPage
 from Pages.profile_page import ProfilePage
 
 
@@ -48,7 +49,7 @@ def login_page(browser):
 
 @pytest.fixture()
 def main_page(browser):
-    page = BasePage(browser)
+    page = HabrMainPage(browser)
     page.go_to()
     return page
 

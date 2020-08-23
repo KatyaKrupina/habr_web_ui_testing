@@ -14,10 +14,10 @@ class MainPage:
     SEARCH_FIELD = By.ID, 'search-form-field'
     HEADER_ENG = 'All streams'
     NAVIGATION = By.CSS_SELECTOR, '[class="nav-links__item"]'
+    HUBS = By.CSS_SELECTOR, '[title="Хабы и компании: 1"]'
 
 
 class Subscribe:
-    HUBS = By.CSS_SELECTOR, '[title="Хабы и компании: 1"]'
     OTUS = By.CSS_SELECTOR, '[class="list-snippet__title-link"]'
     SUBSCRIBE_BUTTON = By.CSS_SELECTOR, '[class="subscribe-button subscribe-button_medium hub-info__subscribe-button"]'
     SUBSCRIBE = By.CSS_SELECTOR, '[class ="profile-section__user-hub profile-section__user-hub_cross"]'
