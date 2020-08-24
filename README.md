@@ -17,9 +17,9 @@
     -e HABR_USER=$HABR_USER \
     habr/tests
 
-Переменные окружения:
-HABR_LOGIN - e-mail
-HABR_PASS - пароль
+Переменные окружения:\
+HABR_LOGIN - e-mail \
+HABR_PASS - пароль \
 HABR_USER - имя пользователя
 
 Получение отчета allure:
