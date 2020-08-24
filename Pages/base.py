@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class BasePage(object):
 
-    def __init__(self, driver, wait=10):
+    def __init__(self, driver, wait=20):
         self.driver = driver
         self.base_url = "https://habr.com/ru"
         self.wait = WebDriverWait(driver, wait)
