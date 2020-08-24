@@ -12,7 +12,7 @@ class MainPage:
     HEADER = By.CSS_SELECTOR, '[class="page-header page-header_110 "]'
     SEARCH = By.ID, 'search-form-btn'
     SEARCH_FIELD = By.ID, 'search-form-field'
-    HEADER_ENG = 'All streams'
+    HEADER_ENG = 'All streams111'
     NAVIGATION = By.CSS_SELECTOR, '[class="nav-links__item"]'
     HUBS = By.CSS_SELECTOR, '[title="Хабы и компании: 1"]'
 
