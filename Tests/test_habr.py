@@ -5,11 +5,11 @@ import allure
 from Pages.selectors import MainPage, SocialNetworks, Profile, Subscribe
 
 
-@allure.story('Change habr settings')
-@allure.title('Set english language')
-def test_change_language(main_page):
-    main_page.change_to_english_language()
-    assert main_page.get_text_in_element(MainPage.HEADER) == MainPage.HEADER_ENG
+# @allure.story('Change habr settings')
+# @allure.title('Set english language')
+# def test_change_language(main_page):
+#     main_page.change_to_english_language()
+#     assert main_page.get_text_in_element(MainPage.HEADER) == MainPage.HEADER_ENG
 
 #
 # @allure.story('Change profile settings')
@@ -22,13 +22,13 @@ def test_change_language(main_page):
 #     profile_page.unsubscribe_hub()
 #
 #
-# @allure.story('Change profile settings')
-# @allure.title('Change user pic')
-# def test_change_avatar(profile_page):
-#     profile_page.show_settings()
-#     profile_page.upload_new_avatar('avatar.jpeg')
-#     assert profile_page.get_text_in_element(Profile.DELETE_AVATAR_BTN) == Profile.DELETE
-#     # profile_page.wait_element_to_be_clickable(Profile.DELETE_AVATAR_BTN).click()
+@allure.story('Change profile settings')
+@allure.title('Change user pic')
+def test_change_avatar(profile_page):
+    profile_page.show_settings()
+    profile_page.upload_new_avatar('avatar.jpeg')
+    assert profile_page.get_text_in_element(Profile.DELETE_AVATAR_BTN) == Profile.DELETE
+    # profile_page.wait_element_to_be_clickable(Profile.DELETE_AVATAR_BTN).click()
 #
 #
 # @allure.story('Change profile settings')

@@ -7,7 +7,7 @@ class MainPage:
     LOGOUT = By.CSS_SELECTOR, '[class="button button_icon button_outline button_logout"]'
     LOGIN_FORM = By.CSS_SELECTOR, '[class="shadow-box__title"]'
     CHANGE_LANGUAGE = By.CSS_SELECTOR, '[class="footer__link js-show_lang_settings"]'
-    ENG = By.CSS_SELECTOR, '[for="hl_langs_en1"]'
+    ENG = By.CSS_SELECTOR, '[for="hl_langs_en"]'
     SUBMIT_BTN = By.CSS_SELECTOR, '[class="btn btn_blue btn_huge btn_full-width js-popup_save_btn"]'
     HEADER = By.CSS_SELECTOR, '[class="page-header page-header_110 "]'
     SEARCH = By.ID, 'search-form-btn'
