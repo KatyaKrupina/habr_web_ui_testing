@@ -1,7 +1,7 @@
 # habr_web_ui_testing
 Тестирование web UI сайта habr.com
 
-Тесты запускаются в Selenoid. 
+Тесты запускаются в Selenoid. \
 Для запуска Selenoid должен быть установлен Docker. 
 Команды для запуска:
 
