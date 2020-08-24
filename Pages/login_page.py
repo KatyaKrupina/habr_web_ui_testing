@@ -1,5 +1,4 @@
 import allure
-from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.by import By
 
 from .base import BasePage

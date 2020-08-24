@@ -28,7 +28,7 @@ def test_change_avatar(profile_page):
     profile_page.show_settings()
     profile_page.upload_new_avatar('avatar.jpeg')
     assert profile_page.get_text_in_element(Profile.DELETE_AVATAR_BTN) == Profile.DELETE
-    profile_page.find_element(Profile.DELETE_AVATAR_BTN).click()
+    # profile_page.wait_element_to_be_clickable(Profile.DELETE_AVATAR_BTN).click()
 
 
 @allure.story('Change profile settings')

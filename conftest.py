@@ -49,17 +49,20 @@ def profile_page(browser):
 @pytest.fixture
 def browser(request):
     browser = request.config.getoption("--browser")
-    selenoid = request.config.getoption("--selenoid")
+    selenoid = '192.168.97.157'
 
-    executor_url = f"http://192.168.97.157:4444/wd/hub"
+    executor_url = f"http://{selenoid}:4444/wd/hub"
 
-    caps = {"browserName": browser,
-            "version": "81.0",
+    caps = {
+            "browserName": browser,
+            "version": "83.0",
             "enableVnc": True,
             "enableVideo": True,
             "enableLog": True,
             "screenResolution": "1280x720",
-            "name": request.node.name}
+            "name": request.node.name,
+            "env": ["LANG=ru_RU.UTF-8", "LANGUAGE=ru:en", "LC_ALL=ru_RU.UTF-8"]
+            }
 
     driver = webdriver.Remote(command_executor=executor_url, desired_capabilities=caps)
 
