@@ -2,9 +2,6 @@ import allure
 import pytest
 
 from selenium import webdriver
-from selenium.webdriver import ChromeOptions, FirefoxOptions, DesiredCapabilities
-
-
 from Pages.login_page import LoginPage
 from Pages.main_page import HabrMainPage
 from Pages.profile_page import ProfilePage
@@ -13,16 +10,6 @@ from Pages.profile_page import ProfilePage
 def pytest_addoption(parser):
     parser.addoption('--browser', default='chrome', help='Testing browser')
     parser.addoption("--selenoid", action="store", default="localhost")
-
-
-# @pytest.fixture
-# def browser_name(request):
-#     return request.config.getoption('--browser')
-#
-#
-# @pytest.fixture
-# def url(request):
-#     return request.config.getoption('--url')
 
 
 @pytest.fixture
@@ -65,30 +52,6 @@ def browser(request):
             }
 
     driver = webdriver.Remote(command_executor=executor_url, desired_capabilities=caps)
-
-    # driver = ''
-    # if browser_name == 'Chrome':
-    #     caps = DesiredCapabilities.CHROME
-    #     options = ChromeOptions()
-    #     # options.add_argument('--headless')
-    #     options.add_argument('--ignore-certificate-errors')
-    #     options.add_experimental_option('w3c', False)
-    #     caps['loggingPrefs'] = {'performance': 'ALL', 'browser': 'ALL'}
-    #     driver = webdriver.Chrome(options=options, desired_capabilities=caps)
-    #     driver.implicitly_wait(5)
-    #
-    # elif browser_name == 'Firefox':
-    #     options = FirefoxOptions()
-    #     options.add_argument('--headless')
-    #     driver = webdriver.Firefox(options=options)
-    #     driver.implicitly_wait(5)
-    #
-    # elif browser_name == 'Safari':
-    #     driver = webdriver.Safari()
-    #     driver.implicitly_wait(5)
-    #
-    # else:
-    #     pass
 
     allure.attach(name=driver.session_id,
                   body=str(driver.desired_capabilities),

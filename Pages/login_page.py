@@ -5,7 +5,6 @@ from .base import BasePage
 from .selectors import MainPage
 
 
-@allure.feature('Login account')
 class LoginPage(BasePage):
     email = (By.ID, 'email_field')
     password = (By.ID, 'password_field')
@@ -32,5 +31,5 @@ class LoginPage(BasePage):
             self.find_element(locator=self.submit_button).click()
 
     def logout(self):
-        with allure.step("Click logout button"):
+        with allure.step("Clicking logout button"):
             self.wait_for_element(MainPage.LOGOUT).click()

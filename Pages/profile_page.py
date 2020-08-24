@@ -1,12 +1,10 @@
 import os
-
 import allure
 
 from Pages.login_page import LoginPage
 from Pages.selectors import MainPage, Profile, Subscribe
 
 
-@allure.feature('Profile Page')
 class ProfilePage(LoginPage):
     user = (os.getenv('HABR_USER'))
 

@@ -1,6 +1,5 @@
-import logging
-
 import allure
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -11,7 +10,6 @@ class BasePage(object):
         self.driver = driver
         self.base_url = "https://habr.com/ru"
         self.wait = WebDriverWait(driver, wait)
-        self.logger = logging.getLogger(type(self).__name__)
 
     def find_element(self, locator):
         with allure.step("Check if element {} is present".format(locator)):
@@ -93,14 +91,3 @@ class BasePage(object):
     def switch_to_current_tab(self):
         with allure.step("Switching to current browser tab"):
             self.driver.switch_to.window(self.driver.window_handles[len(self.driver.window_handles)-1])
-
-    def wait_element_to_be_clickable(self, locator):
-        with allure.step("Check if element {} is clickable".format(locator)):
-            try:
-                a = self.wait.until(EC.element_to_be_clickable(locator))
-                return a
-            except Exception:
-                allure.attach(allure.attach(body=self.driver.get_screenshot_as_png()),
-                              name="screenshot_image",
-                              attachment_type=allure.attachment_type.PNG)
-                raise AssertionError(f"Can't find elements by locator {locator}")

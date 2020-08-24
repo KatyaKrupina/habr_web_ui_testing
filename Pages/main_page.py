@@ -7,7 +7,6 @@ from Pages.base import BasePage
 from Pages.selectors import MainPage, SocialNetworks
 
 
-@allure.feature('Habr Main Page')
 class HabrMainPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
