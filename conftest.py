@@ -1,3 +1,5 @@
+import os
+
 import allure
 import pytest
 
@@ -36,8 +38,7 @@ def profile_page(browser):
 @pytest.fixture
 def browser(request):
     browser = request.config.getoption("--browser")
-    selenoid = '192.168.97.157'
-
+    selenoid = os.getenv('SELENOID_HOST')
     executor_url = f"http://{selenoid}:4444/wd/hub"
 
     caps = {

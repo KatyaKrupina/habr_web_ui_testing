@@ -15,12 +15,14 @@
     -e HABR_LOGIN=$HABR_LOGIN \
     -e HABR_PASS=$HABR_PASS \
     -e HABR_USER=$HABR_USER \
+    -e SELENOID_HOST=$SELENOID_HOST \
     habr/tests
 
 Переменные окружения:\
 HABR_LOGIN - e-mail \
 HABR_PASS - пароль \
-HABR_USER - имя пользователя
+HABR_USER - имя пользователя \
+SELENOID_HOST - IP-адрес
 
 Получение отчета allure:
 
