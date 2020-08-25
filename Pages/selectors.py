@@ -13,7 +13,7 @@ class MainPage:
     SEARCH = By.ID, 'search-form-btn'
     SEARCH_FIELD = By.ID, 'search-form-field'
     HEADER_ENG = 'All streams'
-    NAVIGATION = By.CSS_SELECTOR, '[class="nav-links__item1"]'
+    NAVIGATION = By.CSS_SELECTOR, '[class="nav-links__item"]'
     HUBS = By.CSS_SELECTOR, '[title="Хабы и компании: 1"]'
 
 
