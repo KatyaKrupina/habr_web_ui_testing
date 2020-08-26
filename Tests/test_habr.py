@@ -39,7 +39,7 @@ def test_change_name(profile_page):
 
 
 @allure.feature('Habr Account')
-@allure.title('Logging habr account')
+@allure.title('Login habr account')
 def test_login(login_page):
     login_page.login(os.getenv('HABR_LOGIN'), os.getenv('HABR_PASS'))
     assert login_page.get_text_in_element(Profile.WELCOME) == Profile.WELCOME_TEXT
